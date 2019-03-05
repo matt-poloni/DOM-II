@@ -57,3 +57,6 @@ document.addEventListener('keydown', e => {
   }
 });
 
+document.addEventListener('visibilitychange', function() {
+  mainNav.querySelector('.logo-heading').textContent = "How dare you leave!";
+});
