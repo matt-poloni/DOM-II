@@ -46,6 +46,8 @@ document.addEventListener('wheel', e => allImages.forEach(img => {
   img.style.filter = `hue-rotate(${wheelCount()/2}deg)`;
   mainNav.style.zIndex = 1;
 }));
+// Temporarily adjusts the hue of an image back to normal, but will re-adjust to same rotation as other images on next wheel event
+allImages.forEach(img => img.addEventListener('contextmenu',e => e.target.style.filter = 'hue-rotate(0deg)'));
 
 // Hit ctrl+space to return to top of page
 document.addEventListener('keydown', e => {
@@ -54,3 +56,4 @@ document.addEventListener('keydown', e => {
     window.scrollTo(0,0);
   }
 });
+
