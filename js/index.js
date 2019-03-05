@@ -51,12 +51,17 @@ allImages.forEach(img => img.addEventListener('contextmenu',e => e.target.style.
 
 // Hit ctrl+space to return to top of page
 document.addEventListener('keydown', e => {
-  console.log(e.key);
   if (e.ctrlKey && e.key === ' ') {
     window.scrollTo(0,0);
   }
 });
 
+// Changes .logo-heading text when leaving the page
 document.addEventListener('visibilitychange', function() {
   mainNav.querySelector('.logo-heading').textContent = "How dare you leave!";
+});
+
+// Creates annoying alert every time the page loads
+window.addEventListener('load', e => {
+  alert('The page has been successfully loaded.');
 });
