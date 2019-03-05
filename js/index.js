@@ -18,6 +18,8 @@ const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
   link.addEventListener('focus', e => e.target.style.color = 'crimson');
   link.addEventListener('blur', e => e.target.style.color = '#212529');
+  // Prevents nav items from refreshing page
+  link.addEventListener('click', e => e.preventDefault());
 });
 
 // Changes button background on mouseover and back on mouseout
