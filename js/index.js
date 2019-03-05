@@ -44,4 +44,13 @@ const wheelCount = (function() {
 })();
 document.addEventListener('wheel', e => allImages.forEach(img => {
   img.style.filter = `hue-rotate(${wheelCount()/2}deg)`;
+  mainNav.style.zIndex = 1;
 }));
+
+// Hit ctrl+space to return to top of page
+document.addEventListener('keydown', e => {
+  console.log(e.key);
+  if (e.ctrlKey && e.key === ' ') {
+    window.scrollTo(0,0);
+  }
+});
