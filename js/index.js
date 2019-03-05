@@ -11,7 +11,7 @@ mainNav.addEventListener('dblclick', e => {
     e.currentTarget.style.position = 'static';
     introSec.style.paddingTop = 0;
   }
-})
+});
 
 // Changes nav-link color on focus and back on blur
 const navLinks = document.querySelectorAll('.nav-link');
@@ -64,4 +64,13 @@ document.addEventListener('visibilitychange', function() {
 // Creates annoying alert every time the page loads
 window.addEventListener('load', e => {
   alert('The page has been successfully loaded.');
+});
+
+// Console.log's which element fired, but stops propagation when clicking on nested h2
+const introHeader = document.querySelector('.container.home .intro');
+introHeader.addEventListener('click', e => console.log('introHeader fired!'));
+const introH2 = introHeader.children[1];
+introH2.addEventListener('click', e => {
+  console.log('introH2 fired!');
+  e.stopPropagation();
 });
