@@ -16,8 +16,14 @@ mainNav.addEventListener('dblclick', e => {
 // Changes nav-link color on focus and back on blur
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
-  link.addEventListener('focus', e => e.target.style.color = 'crimson');
-  link.addEventListener('blur', e => e.target.style.color = '#212529');
+  link.addEventListener('focus', e => {
+    e.target.style.color = 'crimson';
+    e.target.style.fontWeight = 'bold';
+  });
+  link.addEventListener('blur', e => {
+    e.target.style.color = '#212529';
+    e.target.style.fontWeight = 'normal';
+  });
   // Prevents nav items from refreshing page
   link.addEventListener('click', e => e.preventDefault());
 });
