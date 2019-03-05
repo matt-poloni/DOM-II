@@ -35,13 +35,13 @@ buttons.forEach(btn => {
 
 // Rotates the hue of all images on the page while using the wheel
 const allImages = document.querySelectorAll('img');
-  const wheelCount = (function() {
-    let counter = 0;
-    return function() {
-      counter++;
-      return counter;
-    };
-  })();
+const wheelCount = (function() {
+  let counter = 0;
+  return function() {
+    counter++;
+    return counter;
+  };
+})();
 document.addEventListener('wheel', e => allImages.forEach(img => {
   img.style.filter = `hue-rotate(${wheelCount()/2}deg)`;
 }));
